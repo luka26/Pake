@@ -342,6 +342,10 @@ window.addEventListener('DOMContentLoaded', _event => {
       padding-top: 20px;
     }
 
+    #__next > div.relative.z-0.flex.h-full.w-full.overflow-hidden > div.flex-shrink-0.overflow-x-hidden.bg-token-sidebar-surface-primary > div > div > div > div > nav, #__next > div.relative.z-0.flex.h-full.w-full.overflow-hidden > div.relative.flex.h-full.max-w-full.flex-1.flex-col.overflow-hidden > main {
+      padding-top: 6px;
+    }
+
     #__next > div.AnnouncementWrapper_container__Z51yh > div > aside.SidebarLayout_sidebar__SXeDJ.SidebarLayout_left__k163a > div > div > header{
       padding-left: 84px;
       padding-top: 10px;
@@ -383,12 +387,12 @@ window.addEventListener('DOMContentLoaded', _event => {
       top: 28px;
     }
 
-    #pack-top-dom:active {
+    #pake-top-dom:active {
       cursor: grabbing;
       cursor: -webkit-grabbing;
     }
 
-    #pack-top-dom{
+    #pake-top-dom{
       position:fixed;
       background:transparent;
       top:0;
@@ -398,7 +402,7 @@ window.addEventListener('DOMContentLoaded', _event => {
       -webkit-app-region: drag;
       user-select: none;
       -webkit-user-select: none;
-      z-index: 90000;
+      z-index: 99999;
     }
 
     @media (max-width:767px){
@@ -412,7 +416,7 @@ window.addEventListener('DOMContentLoaded', _event => {
     }
   `;
   const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
-  if (window.pakeWindowTitleTransparent && isMac) {
+  if (window['pakeConfig']?.hide_title_bar && isMac) {
     const topPaddingStyleElement = document.createElement('style');
     topPaddingStyleElement.innerHTML = topPaddingCSS;
     document.head.appendChild(topPaddingStyleElement);
